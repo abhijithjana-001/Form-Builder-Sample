@@ -1,0 +1,22 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İ–ïàùÿÿÿÿ8ÇÊÍÚĞ1
+r
+java:S3655?"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(º û½ûÿÿÿÿ8ÊËÍÚĞ1
+r
+java:S3655-"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(º û½ûÿÿÿÿ8ÊËÍÚĞ1
+m
+java:S3655)"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¤¤ÙÙ8ÊËÍÚĞ1
+m
+java:S36551"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ìè¹8ÉËÍÚĞ1
+r
+java:S3655G"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.( â‰ûÿÿÿÿ8ÈËÍÚĞ1
+m
+java:S3655="PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¤¤ÙÙ8ÊËÍÚĞ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÓËÍÚĞ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÕËÍÚĞ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÕËÍÚĞ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8áËÍÚĞ1

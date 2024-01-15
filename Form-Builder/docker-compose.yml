@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  formbuilder:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysqldb
+      - postgresdb
+      - mongodb
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysqldb:3306/form_builder?createDatabaseIfNotExist=true
+      - spring.datasource.username=root
+      - spring.datasource.password=1234
+      - second.datasource.driverClassName=org.postgresql.Driver
+      - second.datasource.url=jdbc:postgresql://postgresdb:5432/formBuilder
+      - second.datasource.username=postgres
+      - second.datasource.password=1234
+      - spring.data.mongodb.uri=mongodb://root:admin@mongodb:27017/form
+      - spring.data.mongodb.auto-index-creation=true
+
+    networks:
+      - springboot
+
+  mysqldb:
+    image: "mysql:8.1.0"
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: form_builder
+      MYSQL_ROOT_PASSWORD: 1234
+    networks:
+      - springboot
+
+  postgresdb:
+    image: "postgres:16.1"
+    restart: always
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_DB: formBuilder
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: postgres
+    networks:
+      - springboot
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27020:27017
+    networks:
+      - springboot
+
+networks:
+  springboot:
