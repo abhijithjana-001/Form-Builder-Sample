@@ -11,9 +11,6 @@ public class ComponentValue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ValuesId;
-
-
-
     private String value;
 
 }

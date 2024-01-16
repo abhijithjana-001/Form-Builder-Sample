@@ -16,10 +16,8 @@ public class SqlFormService implements FormService {
 
     @Override
     public ResponseDto<Object> saveOrUpdateForm(Form form, String title) {
-        if(title!=null) {
+        if(title!=null)
             form.setId(repo.findByTitle(title).get().getId());
-            System.out.println( repo.findByTitle(title).get());
-        }
         Form save = repo.save(form);
         return new ResponseDto<>(true,"Form created or updated successfully",save);
     }
