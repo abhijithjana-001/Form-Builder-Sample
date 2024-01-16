@@ -1,4 +1,4 @@
-package com.example.Form.Builder.config;
+package com.example.Form.Builder.config.database;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
