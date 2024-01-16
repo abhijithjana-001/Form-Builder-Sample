@@ -20,6 +20,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
@@ -38,7 +40,7 @@ public class PostGreConfig {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource=new DriverManagerDataSource();
         dataSource.setUrl(environment.getProperty("second.datasource.url"));
-        dataSource.setDriverClassName(environment.getProperty("second.datasource.driverClassName"));
+        dataSource.setDriverClassName(Objects.requireNonNull(environment.getProperty("second.datasource.driverClassName")));
         dataSource.setUsername(environment.getProperty("second.datasource.username"));
         dataSource.setPassword(environment.getProperty("second.datasource.password"));
 

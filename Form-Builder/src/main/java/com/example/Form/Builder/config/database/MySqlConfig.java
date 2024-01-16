@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @Configuration
 @ConditionalOnProperty(name = "current.database", havingValue = "mysql")
@@ -37,7 +38,7 @@ public class MySqlConfig {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource=new DriverManagerDataSource();
         dataSource.setUrl(environment.getProperty("spring.datasource.url"));
-        dataSource.setDriverClassName(environment.getProperty("spring.datasource.driverClassName"));
+        dataSource.setDriverClassName(Objects.requireNonNull(environment.getProperty("spring.datasource.driverClassName")));
         dataSource.setUsername(environment.getProperty("spring.datasource.username"));
         dataSource.setPassword(environment.getProperty("spring.datasource.password"));
         return  dataSource;
