@@ -10,21 +10,23 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import java.util.Objects;
+
 @Configuration
 @ConditionalOnProperty(name = "current.database", havingValue = "mongodb")
 @EnableMongoRepositories(basePackages = {"com.example.Form.Builder.repository"})
-public class MongoConfig {
+public class MongodbConfig {
     @Autowired
     private Environment environment;
 
     @Bean
     public MongoClient mongoClient() {
-        return MongoClients.create(environment.getProperty("spring.data.mongodb.uri"));
+        return MongoClients.create(Objects.requireNonNull(environment.getProperty("spring.data.mongodb.uri")));
     }
 
     @Bean
     public MongoTemplate mongoTemplate() {
-        return new MongoTemplate(mongoClient(), environment.getProperty("spring.data.mongodb.database"));
+        return new MongoTemplate(mongoClient(), Objects.requireNonNull(environment.getProperty("spring.data.mongodb.database")));
     }
 }
 
