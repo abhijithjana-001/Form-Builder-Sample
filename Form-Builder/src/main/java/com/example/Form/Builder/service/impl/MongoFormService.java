@@ -27,7 +27,7 @@ public class MongoFormService implements FormService {
     @Value("${current.database}")
     private String dbName;
 
-    public ResponseDto<List<Object>> saveOrUpdateForm(Form form, String title) {
+    public ResponseDto<Object> saveOrUpdateForm(Form form, String title) {
         if (title == null) {
             MongoForm mongoForm = mongoFormMapStruct.toEntity(form);
             MongoForm save= mongoRepo.save(mongoForm);
@@ -42,13 +42,13 @@ public class MongoFormService implements FormService {
 
     }
 
-    public ResponseDto<Form> deleteFormByTitle(String title){
+    public ResponseDto<Void> deleteFormByTitle(String title){
         mongoRepo.deleteByTitle(title);
 
         return new ResponseDto<>(true,"Form deleted successfully",null);
     }
 
-    public ResponseDto<Form> getFormByTitle(String title){
+    public ResponseDto<Object> getFormByTitle(String title){
        MongoForm form = mongoRepo.findByTitle(title).get();
         return new ResponseDto<>(true,"Successfully found with title",form);
     }
