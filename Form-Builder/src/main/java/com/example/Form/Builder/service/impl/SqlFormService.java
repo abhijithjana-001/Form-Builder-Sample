@@ -21,9 +21,10 @@ public class SqlFormService implements FormService {
     private SqlRepo repo;
 
     @Override
-    public ResponseDto<List<Object>> saveOrUpdateForm(Form form, String title) {
+    public ResponseDto<Object> saveOrUpdateForm(Form form, String title) {
         if(title!=null) {
             form.setId(repo.findByTitle(title).get().getId());
+            System.out.println( repo.findByTitle(title).get());
         }
         Form save = repo.save(form);
         return new ResponseDto<>(true,"Form created or updated successfully",Arrays.asList(save));
@@ -31,13 +32,13 @@ public class SqlFormService implements FormService {
 
     @Override
     @Transactional
-    public ResponseDto<Form> deleteFormByTitle(String title) {
+    public ResponseDto<Void> deleteFormByTitle(String title) {
         repo.deleteByTitle(title);
         return new ResponseDto<>(true,"Form deleted successfully",null);
     }
 
     @Override
-    public ResponseDto<Form> getFormByTitle(String title) {
+    public ResponseDto<Object> getFormByTitle(String title) {
         Form form = repo.findByTitle(title).get();
        return new ResponseDto<>(true,"Successfully found with title",form);
     }
