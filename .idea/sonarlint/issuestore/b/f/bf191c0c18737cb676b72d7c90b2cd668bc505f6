@@ -1,2 +1,4 @@
 
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğÄŒ 
+…
+java:S1128"cRemove this unused import 'org.springframework.boot.autoconfigure.condition.ConditionalOnProperty'.(Á™©¾üÿÿÿÿ8ÓÓõåĞ1
