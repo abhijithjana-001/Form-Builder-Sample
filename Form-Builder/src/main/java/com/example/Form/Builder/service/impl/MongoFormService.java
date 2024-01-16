@@ -29,6 +29,8 @@ public class MongoFormService implements FormService {
 
     public ResponseDto<List<Object>> saveOrUpdateForm(Form form, String title) {
         if (title == null) {
+            MongoForm mongoForm = mongoFormMapStruct.toEntity(form);
+            MongoForm save= mongoRepo.save(mongoForm);
             return new ResponseDto<>(true, "Form created successfully ", Arrays.asList());
         } else {
             MongoForm form3 = mongoRepo.findByTitle(title).get();
@@ -48,6 +50,6 @@ public class MongoFormService implements FormService {
 
     public ResponseDto<Form> getFormByTitle(String title){
        MongoForm form = mongoRepo.findByTitle(title).get();
-        return new ResponseDto<>(true,"Successfully found with title",null);
+        return new ResponseDto<>(true,"Successfully found with title",form);
     }
 }
