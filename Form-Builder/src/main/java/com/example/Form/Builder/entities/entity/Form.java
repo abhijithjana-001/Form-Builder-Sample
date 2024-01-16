@@ -16,7 +16,6 @@ public class Form {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
     private String title;
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)

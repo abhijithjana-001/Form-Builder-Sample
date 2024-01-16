@@ -9,6 +9,5 @@ import java.util.Optional;
 public interface MongodbRepo extends MongoRepository<MongodbForm, String> {
 
     void deleteByTitle(String title);
-
     Optional<MongodbForm> findByTitle(String title);
 }
