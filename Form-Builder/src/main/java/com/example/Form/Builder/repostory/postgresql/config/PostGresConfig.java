@@ -21,6 +21,7 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 @Configuration
+@ConditionalOnProperty(name = "current.database", havingValue = "postgresql")
 @EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef = "secondEntityManagerFactoryBean",
@@ -28,7 +29,7 @@ import java.util.Map;
         transactionManagerRef ="secondTransactionManager"
 )
 
-@ConditionalOnProperty(name = "current.database", havingValue = "postgresql")
+
 public class PostGresConfig {
     @Autowired
     private Environment environment;
