@@ -1,6 +1,7 @@
 package com.example.Form.Builder.repostory.mysql.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -19,12 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
+@ConditionalOnProperty(name = "current.database", havingValue = "mysql")
 @EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef = "entityManagerFactoryBean",
-        basePackages = {"com.example.Form.Builder.repostory.mysql.repo"},
+        basePackages = {"com.example.Form.Builder.repostory"},
         transactionManagerRef ="transactionManager"
 )
+
 public class MySqlConfig {
     @Autowired
     private Environment environment;

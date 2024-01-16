@@ -1,11 +1,11 @@
-version: "3.8"
+version: "2.23"
 
 services:
   formbuilder:
     build: .
     restart: always
     ports:
-      - 8080:8080
+      - 8082:8080
     depends_on:
       - mysqldb
       - postgresdb
