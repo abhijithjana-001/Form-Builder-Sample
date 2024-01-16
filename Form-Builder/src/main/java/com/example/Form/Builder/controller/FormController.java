@@ -6,6 +6,8 @@ import com.example.Form.Builder.dto.response.ResponseDto;
 import com.example.Form.Builder.entities.entity.Form;
 import com.example.Form.Builder.service.FormService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,11 @@ import java.util.List;
 public class FormController {
     @Autowired
     private FormMapStruct formMapStruct;
+
+    @Value("${current.database}")
+    private static String dbName;
+
+    public static final String formServiceBean=dbName;
 
     @Autowired
     private FormService formService;

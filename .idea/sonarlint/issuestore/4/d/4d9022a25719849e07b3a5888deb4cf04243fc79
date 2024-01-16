@@ -1,4 +1,10 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ý–ïàùÿÿÿÿ8ñÖý†Ñ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ý–ïàùÿÿÿÿ8í‘À‡Ñ1
+r
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(þç¡¹üÿÿÿÿ8ø‘À‡Ñ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8÷Öý†Ñ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8ù‘À‡Ñ1
+u
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Qualifier'.(íàÄ®ýÿÿÿÿ8ß²À‡Ñ1
+…
+java:S1128	"cRemove this unused import 'org.springframework.boot.autoconfigure.condition.ConditionalOnProperty'.(Á™©¾üÿÿÿÿ8ß²À‡Ñ1
