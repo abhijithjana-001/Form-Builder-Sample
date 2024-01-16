@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "form" )
-public class MongoForm {
+public class MongodbForm {
 
     @Transient
     public static final String SEQUENCE_NAME = "user_sequence";
