@@ -6,7 +6,7 @@
 //import com.example.Form.Builder.entities.entity.Form;
 //
 //import com.example.Form.Builder.repostory.SqlRepo;
-//import com.example.Form.Builder.repostory.mongodb.repo.MongoRepo;
+//import com.example.Form.Builder.repostory.mongodb.repo.MongodbRepo;
 //
 //import com.example.Form.Builder.service.FormService;
 //import lombok.val;
@@ -44,10 +44,10 @@
 ////          form.setId(form2.getId());
 ////          Form save2= postgreRepo.save(form);
 //
-////          MongoForm form3 = mongoRepo.findByTitle(title).get();
+////          MongoForm form3 = mongodbRepo.findByTitle(title).get();
 ////          MongoForm mongoForm=mongoFormMapStruct.toEntity(form);
 ////          mongoForm.set_id(form3.get_id());
-////         MongoForm save3= mongoRepo.save(mongoForm);
+////         MongoForm save3= mongodbRepo.save(mongoForm);
 //
 //
 //          return new ResponseDto<>(true,"Form updated successfully",Arrays.asList());
@@ -60,7 +60,7 @@
 ////      formRepo.deleteById(form1.getId());
 ////        Form form2 = postgreRepo.findByTitle(title).get();
 ////        postgreRepo.deleteById(form2.getId());
-////        mongoRepo.deleteByTitle(title);
+////        mongodbRepo.deleteByTitle(title);
 //
 //        return new ResponseDto<>(true,"Form deleted successfully",null);
 //    }

@@ -3,8 +3,8 @@ package com.example.Form.Builder.service.impl;
 import com.example.Form.Builder.config.MongoFormMapStruct;
 import com.example.Form.Builder.dto.response.ResponseDto;
 import com.example.Form.Builder.entities.entity.Form;
-import com.example.Form.Builder.entities.mongoEntity.MongoForm;
-import com.example.Form.Builder.repository.MongoRepo;
+import com.example.Form.Builder.entities.mongoEntity.MongodbForm;
+import com.example.Form.Builder.repository.MongodbRepo;
 import com.example.Form.Builder.service.FormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class MongoFormService implements FormService {
 
 
     @Autowired
-    MongoRepo mongoRepo;
+    MongodbRepo mongodbRepo;
 
     @Autowired
     MongoFormMapStruct mongoFormMapStruct;
@@ -25,27 +25,27 @@ public class MongoFormService implements FormService {
 
     public ResponseDto<Object> saveOrUpdateForm(Form form, String title) {
         if (title == null) {
-            MongoForm mongoForm = mongoFormMapStruct.toEntity(form);
-            MongoForm save= mongoRepo.save(mongoForm);
-            return new ResponseDto<>(true, "Form created successfully ", save);
+            MongodbForm mongoForm = mongoFormMapStruct.toEntity(form);
+            MongodbForm save= mongodbRepo.save(mongoForm);
+            return new ResponseDto<>(true, "Form created successfully ", Arrays.asList());
         } else {
-            MongoForm form3 = mongoRepo.findByTitle(title).get();
-            MongoForm mongoForm = mongoFormMapStruct.toEntity(form);
+            MongodbForm form3 = mongodbRepo.findByTitle(title).get();
+            MongodbForm mongoForm = mongoFormMapStruct.toEntity(form);
             mongoForm.set_id(form3.get_id());
-            MongoForm save3 = mongoRepo.save(mongoForm);
-            return new ResponseDto<>(true, "Form updated successfully", save3);
+            MongodbForm save3 = mongodbRepo.save(mongoForm);
+            return new ResponseDto<>(true, "Form updated successfully", Arrays.asList());
         }
 
     }
 
     public ResponseDto<Void> deleteFormByTitle(String title){
-        mongoRepo.deleteByTitle(title);
+        mongodbRepo.deleteByTitle(title);
 
         return new ResponseDto<>(true,"Form deleted successfully",null);
     }
 
     public ResponseDto<Object> getFormByTitle(String title){
-       MongoForm form = mongoRepo.findByTitle(title).get();
+       MongodbForm form = mongodbRepo.findByTitle(title).get();
         return new ResponseDto<>(true,"Successfully found with title",form);
     }
 }
