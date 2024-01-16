@@ -6,6 +6,8 @@ import com.example.Form.Builder.dto.response.ResponseDto;
 import com.example.Form.Builder.entities.entity.Form;
 import com.example.Form.Builder.service.FormService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +21,7 @@ public class FormController {
 
     @Autowired
     private FormService formService;
+    @Qualifier
 
     @PostMapping("/create")
   public ResponseEntity<ResponseDto<List<Object>>> createForm(@RequestBody FormDto formDto){
