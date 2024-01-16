@@ -1,4 +1,4 @@
-package com.example.Form.Builder.repostory.mongodb.repo;
+package com.example.Form.Builder.repostory.mongodb;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;

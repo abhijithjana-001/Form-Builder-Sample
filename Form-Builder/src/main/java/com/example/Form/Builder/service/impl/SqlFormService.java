@@ -16,7 +16,6 @@ import java.util.List;
 @Service
 
 public class SqlFormService implements FormService {
-
     @Autowired
     private SqlRepo repo;
 
@@ -27,7 +26,7 @@ public class SqlFormService implements FormService {
             System.out.println( repo.findByTitle(title).get());
         }
         Form save = repo.save(form);
-        return new ResponseDto<>(true,"Form created or updated successfully",Arrays.asList(save));
+        return new ResponseDto<>(true,"Form created or updated successfully",save);
     }
 
     @Override
