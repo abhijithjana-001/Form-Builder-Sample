@@ -1,6 +1,6 @@
 //package com.example.Form.Builder.service.impl;
 //
-//import com.example.Form.Builder.config.MongoFormMapStruct;
+//import com.example.Form.Builder.config.MongodbFormMapStruct;
 //import com.example.Form.Builder.dto.response.ResponseDto;
 //
 //import com.example.Form.Builder.entities.entity.Form;
@@ -45,7 +45,7 @@
 ////          Form save2= postgreRepo.save(form);
 //
 ////          MongoForm form3 = mongodbRepo.findByTitle(title).get();
-////          MongoForm mongoForm=mongoFormMapStruct.toEntity(form);
+////          MongoForm mongoForm=mongodbFormMapStruct.toEntity(form);
 ////          mongoForm.set_id(form3.get_id());
 ////         MongoForm save3= mongodbRepo.save(mongoForm);
 //
