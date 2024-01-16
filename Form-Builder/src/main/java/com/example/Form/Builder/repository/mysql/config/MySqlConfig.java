@@ -1,4 +1,4 @@
-package com.example.Form.Builder.repostory.mysql.config;
+package com.example.Form.Builder.repository.mysql.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -24,7 +24,7 @@ import java.util.Map;
 @EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef = "entityManagerFactoryBean",
-        basePackages = {"com.example.Form.Builder.repostory"},
+        basePackages = {"com.example.Form.Builder.repository"},
         transactionManagerRef ="transactionManager"
 )
 

@@ -1,4 +1,4 @@
-package com.example.Form.Builder.repostory.mongodb;
+package com.example.Form.Builder.repository.mongodb;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -11,8 +11,8 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
-@ConditionalOnProperty(name = "current.database", havingValue = "mongo")
-@EnableMongoRepositories(basePackages = {"com.example.Form.Builder.repostory.mongodb.repo"})
+@ConditionalOnProperty(name = "current.database", havingValue = "mongodb")
+@EnableMongoRepositories(basePackages = {"com.example.Form.Builder.repository.mongodb.repo"})
 public class MongoConfig {
     @Autowired
     private Environment environment;

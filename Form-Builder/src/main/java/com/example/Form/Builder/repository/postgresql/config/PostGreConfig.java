@@ -1,4 +1,4 @@
-package com.example.Form.Builder.repostory.postgresql.config;
+package com.example.Form.Builder.repository.postgresql.config;
 
 
 
@@ -21,16 +21,15 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 @Configuration
-@ConditionalOnProperty(name = "current.database", havingValue = "postgresql")
 @EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef = "secondEntityManagerFactoryBean",
-        basePackages = {"com.example.Form.Builder.repostory"},
+        basePackages = {"com.example.Form.Builder.repository"},
         transactionManagerRef ="secondTransactionManager"
 )
 
-
-public class PostGresConfig {
+@ConditionalOnProperty(name = "current.database", havingValue = "postgresql")
+public class PostGreConfig {
     @Autowired
     private Environment environment;
 

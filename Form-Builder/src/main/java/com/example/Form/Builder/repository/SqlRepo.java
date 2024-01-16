@@ -1,4 +1,4 @@
-package com.example.Form.Builder.repostory;
+package com.example.Form.Builder.repository;
 
 import com.example.Form.Builder.entities.entity.Form;
 import org.springframework.data.jpa.repository.JpaRepository;

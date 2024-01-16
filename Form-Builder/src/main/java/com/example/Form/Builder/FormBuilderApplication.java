@@ -1,14 +1,7 @@
 package com.example.Form.Builder;
 
-import com.example.Form.Builder.entities.entity.Form;
-import com.example.Form.Builder.entities.entity.FormComponent;
-import com.example.Form.Builder.repostory.SqlRepo;
-import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Arrays;
 
 @SpringBootApplication
 public class FormBuilderApplication {

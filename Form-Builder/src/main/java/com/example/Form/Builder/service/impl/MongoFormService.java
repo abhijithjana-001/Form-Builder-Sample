@@ -4,14 +4,12 @@ import com.example.Form.Builder.config.MongoFormMapStruct;
 import com.example.Form.Builder.dto.response.ResponseDto;
 import com.example.Form.Builder.entities.entity.Form;
 import com.example.Form.Builder.entities.mongoEntity.MongoForm;
-import com.example.Form.Builder.repostory.mongodb.repo.MongoRepo;
+import com.example.Form.Builder.repository.mongodb.repo.MongoRepo;
 import com.example.Form.Builder.service.FormService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.List;
 
 
 @Service
@@ -24,8 +22,6 @@ public class MongoFormService implements FormService {
     @Autowired
     MongoFormMapStruct mongoFormMapStruct;
 
-    @Value("${current.database}")
-    private String dbName;
 
     public ResponseDto<Object> saveOrUpdateForm(Form form, String title) {
         if (title == null) {

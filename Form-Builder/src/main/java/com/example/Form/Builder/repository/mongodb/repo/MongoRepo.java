@@ -1,7 +1,6 @@
-package com.example.Form.Builder.repostory.mongodb.repo;
+package com.example.Form.Builder.repository.mongodb.repo;
 
 import com.example.Form.Builder.entities.mongoEntity.MongoForm;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
