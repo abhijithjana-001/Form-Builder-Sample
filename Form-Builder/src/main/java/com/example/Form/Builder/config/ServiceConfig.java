@@ -1,5 +1,6 @@
-package com.example.Form.Builder.service;
+package com.example.Form.Builder.config;
 
+import com.example.Form.Builder.service.FormService;
 import com.example.Form.Builder.service.impl.MongoFormService;
 import com.example.Form.Builder.service.impl.SqlFormService;
 import org.springframework.beans.factory.annotation.Value;
