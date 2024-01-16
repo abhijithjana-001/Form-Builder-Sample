@@ -7,7 +7,5 @@ import java.util.Optional;
 
 public interface SqlRepo extends JpaRepository<Form,Long>  {
     void  deleteByTitle(String title);
-
-
     Optional<Form> findByTitle(String title);
 }
