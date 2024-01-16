@@ -1,4 +1,4 @@
-package com.example.Form.Builder.repostory.postgresql.config;
+package com.example.Form.Builder.repository.postgresql.config;
 
 
 
@@ -24,12 +24,12 @@ import java.util.Map;
 @EnableTransactionManagement
 @EnableJpaRepositories(
         entityManagerFactoryRef = "secondEntityManagerFactoryBean",
-        basePackages = {"com.example.Form.Builder.repostory"},
+        basePackages = {"com.example.Form.Builder.repository"},
         transactionManagerRef ="secondTransactionManager"
 )
 
 @ConditionalOnProperty(name = "current.database", havingValue = "postgresql")
-public class PostGresConfig {
+public class PostGreConfig {
     @Autowired
     private Environment environment;
 

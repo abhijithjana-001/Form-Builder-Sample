@@ -15,7 +15,7 @@ public class ServiceConfig {
     @Bean
     @Primary
     public FormService primaryFormService(SqlFormService sqlFormService, MongoFormService mongoFormService) {
-        if ("mongo".equals(dbName)) {
+        if ("mongodb".equals(dbName)) {
             return mongoFormService;
         } else {
             return sqlFormService;
