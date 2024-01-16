@@ -3,7 +3,7 @@
 //import com.example.Form.Builder.dto.response.ResponseDto;
 //import com.example.Form.Builder.entities.entity.Form;
 //import com.example.Form.Builder.entities.mongoEntity.MongoForm;
-//import com.example.Form.Builder.repository.MongoRepo;
+//import com.example.Form.Builder.repository.MongodbRepo;
 //import com.example.Form.Builder.repository.mysql.repo.FormRepo;
 //import com.example.Form.Builder.repository.postgres.repo.PostgreRepo;
 //import com.example.Form.Builder.service.impl.FormServiceImpl;
@@ -36,7 +36,7 @@
 //    private PostgreRepo postgreRepo;
 //
 //    @SpyBean
-//    private MongoRepo mongoRepo;
+//    private MongodbRepo mongoRepo;
 //
 //
 //    @Test
