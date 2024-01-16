@@ -1,6 +1,9 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(û½ëãıÿÿÿÿ
-X
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
-X
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(û½ëãıÿÿÿÿ8åİˆÑ1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‚¢ ×ıÿÿÿÿ8òİˆÑ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8òİˆÑ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8òİˆÑ1
+u
+java:S1128	"SRemove this unused import 'org.springframework.beans.factory.annotation.Qualifier'.(íàÄ®ıÿÿÿÿ8˜¼©ˆÑ1

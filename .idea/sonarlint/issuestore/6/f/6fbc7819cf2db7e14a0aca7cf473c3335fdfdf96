@@ -1,5 +1,16 @@
 
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(èÇ¿√
+X	java:S125"<This block of commented-out lines of code should be removed.(≤òÏÉ8Ä®êá—1
+]	java:S125"<This block of commented-out lines of code should be removed.(·Ì¸»˘ˇˇˇˇ8Òéêá—1
+g
+java:S1128"JRemove this unused import 'com.example.Form.Builder.entities.entity.Form'.(îΩºÃ8Òéêá—1
+u
+java:S1128"SRemove this unused import 'com.example.Form.Builder.entities.entity.FormComponent'.(±¬˛˛ˇˇˇˇˇ8Úéêá—1
+d
+java:S1128"GRemove this unused import 'com.example.Form.Builder.repostory.SqlRepo'.(¶æÉ¶8É®êá—1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(ÍÊƒﬁ8€Ä¶Â–1
-L	java:S106'"+Replace this use of System.out by a logger.(Î◊‰‡˛ˇˇˇˇ8ıä£Â–1
+java:S1128"=Remove this unused import 'jakarta.annotation.PostConstruct'.(˚≤Ò¸˛ˇˇˇˇ8Úéêá—1
+u
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(°û∏Œ˘ˇˇˇˇ8É®êá—1
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(Óñò…¸ˇˇˇˇ8Úéêá—1
