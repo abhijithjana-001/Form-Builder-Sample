@@ -25,14 +25,14 @@ public class MongoFormService implements FormService {
 
     public ResponseDto<Object> saveOrUpdateForm(Form form, String title) {
         if (title == null) {
-            MongodbForm mongoForm = mongoFormMapStruct.toEntity(form);
-            MongodbForm save= mongodbRepo.save(mongoForm);
+            MongodbForm mongodbForm = mongoFormMapStruct.toEntity(form);
+            MongodbForm save= mongodbRepo.save(mongodbForm);
             return new ResponseDto<>(true, "Form created successfully ", save);
         } else {
             MongodbForm form3 = mongodbRepo.findByTitle(title).get();
-            MongodbForm mongoForm = mongoFormMapStruct.toEntity(form);
-            mongoForm.set_id(form3.get_id());
-            MongodbForm save3 = mongodbRepo.save(mongoForm);
+            MongodbForm mongodbForm = mongoFormMapStruct.toEntity(form);
+            mongodbForm.set_id(form3.get_id());
+            MongodbForm save3 = mongodbRepo.save(mongodbForm);
             return new ResponseDto<>(true, "Form updated successfully", save3);
         }
 
