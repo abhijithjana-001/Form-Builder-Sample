@@ -55,7 +55,6 @@ public class PostGresConfig {
         bean.setDataSource(dataSource());
 
         JpaVendorAdapter adapter=new HibernateJpaVendorAdapter();
-
         bean.setJpaVendorAdapter(adapter);
 
         Map<String,String> props=new HashMap<>();

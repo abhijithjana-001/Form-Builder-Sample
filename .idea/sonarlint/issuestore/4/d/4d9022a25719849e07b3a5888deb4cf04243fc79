@@ -1,11 +1,11 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İ–ïàùÿÿÿÿ8öè¦‰Ñ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İ–ïàùÿÿÿÿ8´ªÔ‰Ñ1
 r
-java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(şç¡¹üÿÿÿÿ8ƒé¦‰Ñ1
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ŒÚúêûÿÿÿÿ8ÁªÔ‰Ñ1
 r
-java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ŒÚúêûÿÿÿÿ8…é¦‰Ñ1
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(şç¡¹üÿÿÿÿ8ÁªÔ‰Ñ1
 m
-java:S3655*"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¥ñŠè8…é¦‰Ñ1
+java:S3655)"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¥ñŠè8ÁªÔ‰Ñ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8†é¦‰Ñ1
-L	java:S106"+Replace this use of System.out by a logger.(ŒÚúêûÿÿÿÿ8é¦‰Ñ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÂªÔ‰Ñ1
+L	java:S106"+Replace this use of System.out by a logger.(ŒÚúêûÿÿÿÿ8ÇªÔ‰Ñ1
