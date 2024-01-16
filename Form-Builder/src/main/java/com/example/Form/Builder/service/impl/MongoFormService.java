@@ -4,7 +4,7 @@ import com.example.Form.Builder.config.MongoFormMapStruct;
 import com.example.Form.Builder.dto.response.ResponseDto;
 import com.example.Form.Builder.entities.entity.Form;
 import com.example.Form.Builder.entities.mongoEntity.MongoForm;
-import com.example.Form.Builder.repository.mongodb.repo.MongoRepo;
+import com.example.Form.Builder.repository.MongoRepo;
 import com.example.Form.Builder.service.FormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
