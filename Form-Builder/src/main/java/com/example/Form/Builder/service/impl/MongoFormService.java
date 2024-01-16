@@ -27,13 +27,13 @@ public class MongoFormService implements FormService {
         if (title == null) {
             MongodbForm mongoForm = mongoFormMapStruct.toEntity(form);
             MongodbForm save= mongodbRepo.save(mongoForm);
-            return new ResponseDto<>(true, "Form created successfully ", Arrays.asList());
+            return new ResponseDto<>(true, "Form created successfully ", save);
         } else {
             MongodbForm form3 = mongodbRepo.findByTitle(title).get();
             MongodbForm mongoForm = mongoFormMapStruct.toEntity(form);
             mongoForm.set_id(form3.get_id());
             MongodbForm save3 = mongodbRepo.save(mongoForm);
-            return new ResponseDto<>(true, "Form updated successfully", Arrays.asList());
+            return new ResponseDto<>(true, "Form updated successfully", save3);
         }
 
     }
