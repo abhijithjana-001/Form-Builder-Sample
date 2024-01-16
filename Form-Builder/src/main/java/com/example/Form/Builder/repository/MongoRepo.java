@@ -1,4 +1,4 @@
-package com.example.Form.Builder.repository.mongodb.repo;
+package com.example.Form.Builder.repository;
 
 import com.example.Form.Builder.entities.mongoEntity.MongoForm;
 import org.springframework.data.mongodb.repository.MongoRepository;
