@@ -1,0 +1,18 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İ–ïàùÿÿÿÿ
+m
+java:S3655 "PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Ìè¹8ìÙöŒÑ1
+m
+java:S36550"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ÚœÓ8íÙöŒÑ1
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+U
+java:S1854"8Remove this useless assignment to local variable "save".(ÁŠ†8ÁæÆ‰Ñ1
+[
+java:S1854#"9Remove this useless assignment to local variable "save3".(šö©ğûÿÿÿÿ8ÁæÆ‰Ñ1
+F
+java:S1481")Remove this unused "save" local variable.(ÁŠ†8ÄæÆ‰Ñ1
+L
+java:S1481#"*Remove this unused "save3" local variable.(šö©ğûÿÿÿÿ8ÅæÆ‰Ñ1
