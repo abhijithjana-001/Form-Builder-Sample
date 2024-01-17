@@ -6,15 +6,15 @@ import com.example.Form.Builder.repository.SqlRepo;
 import com.example.Form.Builder.service.FormService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Service;
 
 @Service
-
+@Conditional(MultipleDatabaseCondition.class)
 public class SqlFormService implements FormService {
     @Autowired
     private SqlRepo repo;
-
-
 
     @Override
     public ResponseDto<Object> saveOrUpdateForm(Form form, String title) {

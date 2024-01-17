@@ -2,6 +2,7 @@ package com.example.Form.Builder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class FormBuilderApplication {
@@ -9,7 +10,8 @@ public class FormBuilderApplication {
 //	private SqlRepo sqlRepo;
 
 	public static void main(String[] args) {
-		SpringApplication.run(FormBuilderApplication.class, args);
+
+ SpringApplication.run(FormBuilderApplication.class, args);
 	}
 
 
