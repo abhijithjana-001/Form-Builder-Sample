@@ -17,8 +17,10 @@ public class ServiceConfig {
     @Primary
     public FormService primaryFormService(SqlFormService sqlFormService,MongoFormService mongoFormService) {
         if ("mongodb".equals(dbName)) {
+
             return mongoFormService;
         } else {
+            System.out.println("sssssss");
             return sqlFormService;
         }
     }
