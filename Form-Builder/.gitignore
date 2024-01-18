@@ -33,5 +33,5 @@ build/
 ### VS Code ###
 .vscode/
 
-./src/main/java/com.example.Form.Builder/config/database
+src/main/java/com.example.Form.Builder/config/database
 
