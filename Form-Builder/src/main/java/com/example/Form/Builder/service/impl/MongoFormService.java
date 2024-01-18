@@ -10,9 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
-@ConditionalOnProperty(name = "current.database", havingValue = "mongodb")
+@ConditionalOnProperty(name = "current.database", havingValue = "redis")
 public class MongoFormService implements FormService {
     private final MongodbRepo mongodbRepo;
     private final MongodbFormMapStruct mongodbFormMapStruct;
@@ -28,11 +30,12 @@ public class MongoFormService implements FormService {
             MongodbForm save= mongodbRepo.save(mongodbForm);
             return new ResponseDto<>(true, "Form created successfully ", save);
         } else {
-            MongodbForm form3 = mongodbRepo.findByTitle(title).get();
-            MongodbForm mongodbForm = mongodbFormMapStruct.toEntity(form);
-            mongodbForm.set_id(form3.get_id());
-            MongodbForm save3 = mongodbRepo.save(mongodbForm);
-            return new ResponseDto<>(true, "Form updated successfully", save3);
+           List< MongodbForm> form3 = mongodbRepo.findByTitle(title).get();
+            System.out.println(form3);
+//            MongodbForm mongodbForm = mongodbFormMapStruct.toEntity(form);
+//            mongodbForm.set_id(form3.get_id());
+//            MongodbForm save3 = mongodbRepo.save(mongodbForm);
+            return new ResponseDto<>(true, "Form updated successfully", null);
         }
 
     }
@@ -44,7 +47,7 @@ public class MongoFormService implements FormService {
     }
 
     public ResponseDto<Object> getFormByTitle(String title){
-       MongodbForm form = mongodbRepo.findByTitle(title).get();
+      List< MongodbForm >form = mongodbRepo.findByTitle(title).get();
         return new ResponseDto<>(true,"Successfully found with title",form);
     }
 }
