@@ -7,10 +7,12 @@ import com.example.Form.Builder.entities.mongoEntity.MongodbForm;
 import com.example.Form.Builder.repository.MongodbRepo;
 import com.example.Form.Builder.service.FormService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 
 @Service
+@ConditionalOnProperty(name = "current.database", havingValue = "mongodb")
 public class MongoFormService implements FormService {
 
     @Autowired
