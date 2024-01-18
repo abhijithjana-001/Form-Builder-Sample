@@ -6,7 +6,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 
 
 
-public class MultipleDatabaseCondition implements Condition
+public class MysqlPostgreSqlCondition implements Condition
 {
 
 

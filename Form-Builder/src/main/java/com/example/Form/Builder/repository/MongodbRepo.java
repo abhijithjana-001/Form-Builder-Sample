@@ -11,9 +11,8 @@ import java.util.Optional;
 public interface MongodbRepo extends MongoRepository<MongodbForm, String> {
 
    void deleteByTitle(String title);
-    @Cacheable(value = "myCache", key = "#title")
-    Optional<List<MongodbForm>> findByTitle(String title);
 
-    @Cacheable(value = "myCache", key = "#_id")
-    Optional<MongodbForm> findById(String id);
+    Optional<MongodbForm> findByTitle(String title);
+
+
 }

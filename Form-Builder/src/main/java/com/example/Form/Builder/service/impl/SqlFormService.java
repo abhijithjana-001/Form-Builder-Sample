@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Service;
 
 @Service
-@Conditional(MultipleDatabaseCondition.class)
+@Conditional(MysqlPostgreSqlCondition.class)
 public class SqlFormService implements FormService {
     private final SqlRepo repo;
 
