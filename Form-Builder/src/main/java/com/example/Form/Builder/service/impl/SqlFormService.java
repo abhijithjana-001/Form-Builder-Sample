@@ -5,13 +5,11 @@ import com.example.Form.Builder.entities.entity.Form;
 import com.example.Form.Builder.repository.SqlRepo;
 import com.example.Form.Builder.service.FormService;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Service;
 
 @Service
-@Conditional(MultipleDatabaseCondition.class)
+@Conditional(MysqlPostgreSqlCondition.class)
 public class SqlFormService implements FormService {
     private final SqlRepo repo;
 
