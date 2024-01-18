@@ -16,12 +16,13 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "api/form")
 public class FormController {
-    @Autowired
-    private FormMapStruct formMapStruct;
+    private final FormMapStruct formMapStruct;
+    private final FormService formService;
 
-
-    @Autowired
-    private FormService formService;
+    public FormController(FormMapStruct formMapStruct, FormService formService) {
+        this.formMapStruct = formMapStruct;
+        this.formService = formService;
+    }
 
     @PostMapping("/create")
   public ResponseEntity<ResponseDto<Object>> createForm(@RequestBody FormDto formDto){

@@ -39,7 +39,7 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="form@localhost" uuid="9487005a-fc5e-4c27-bde9-339ea372d805">
+    <data-source source="LOCAL" name="form@localhost" uuid="d0a0385e-63d4-4677-b00f-2e03cf1cac76">
       <driver-ref>mongo</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>

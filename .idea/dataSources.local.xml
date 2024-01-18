@@ -43,10 +43,10 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="form@localhost" uuid="9487005a-fc5e-4c27-bde9-339ea372d805">
+    <data-source name="form@localhost" uuid="d0a0385e-63d4-4677-b00f-2e03cf1cac76">
       <database-info product="Mongo DB" version="7.0.5" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.18" dbms="MONGO" exact-version="7.0.5" exact-driver-version="1.18" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <auth-provider>no-auth</auth-provider>
+      <user-name>admin</user-name>
       <schema-mapping>
         <introspection-scope>
           <node kind="schema" qname="@" />

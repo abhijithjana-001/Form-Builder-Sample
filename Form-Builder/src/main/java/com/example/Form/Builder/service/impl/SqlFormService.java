@@ -13,8 +13,11 @@ import org.springframework.stereotype.Service;
 @Service
 @Conditional(MultipleDatabaseCondition.class)
 public class SqlFormService implements FormService {
-    @Autowired
-    private SqlRepo repo;
+    private final SqlRepo repo;
+
+    public SqlFormService(SqlRepo repo) {
+        this.repo = repo;
+    }
 
     @Override
     public ResponseDto<Object> saveOrUpdateForm(Form form, String title) {
