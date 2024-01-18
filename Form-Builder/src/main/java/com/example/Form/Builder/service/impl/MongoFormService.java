@@ -8,11 +8,12 @@ import com.example.Form.Builder.repository.MongodbRepo;
 import com.example.Form.Builder.service.FormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Service;
 
 
 @Service
-@ConditionalOnProperty(name = "current.database", havingValue = "mongodb")
+@Conditional(MongoRedisCondition.class)
 public class MongoFormService implements FormService {
     private final MongodbRepo mongodbRepo;
     private final MongodbFormMapStruct mongodbFormMapStruct;
