@@ -14,14 +14,13 @@ import org.springframework.stereotype.Service;
 @Service
 @ConditionalOnProperty(name = "current.database", havingValue = "mongodb")
 public class MongoFormService implements FormService {
+    private final MongodbRepo mongodbRepo;
+    private final MongodbFormMapStruct mongodbFormMapStruct;
 
-    @Autowired
-    MongodbRepo mongodbRepo;
-
-    @Autowired
-    MongodbFormMapStruct mongodbFormMapStruct;
-
-
+    public MongoFormService(MongodbRepo mongodbRepo, MongodbFormMapStruct mongodbFormMapStruct) {
+        this.mongodbRepo = mongodbRepo;
+        this.mongodbFormMapStruct = mongodbFormMapStruct;
+    }
 
     public ResponseDto<Object> saveOrUpdateForm(Form form, String title) {
         if (title == null) {
