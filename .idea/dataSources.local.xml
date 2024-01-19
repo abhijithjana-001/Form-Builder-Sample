@@ -55,16 +55,15 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="0@localhost" uuid="aaad32a1-8316-4f2d-9129-182d06374f3e">
+    <data-source name="0@localhost" uuid="c0a77321-c4a0-455d-90e3-64bccceeb8c7">
       <database-info product="Redis Standalone" version="7.2.4" jdbc-version="4.2" driver-name="Redis JDBC Driver" driver-version="1.4" dbms="REDIS" exact-version="7.2.4" exact-driver-version="1.4">
         <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>
       </database-info>
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
-      <auth-provider>no-auth</auth-provider>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" negative="1" />
+          <node kind="schema" qname="@" />
         </introspection-scope>
       </schema-mapping>
     </data-source>
