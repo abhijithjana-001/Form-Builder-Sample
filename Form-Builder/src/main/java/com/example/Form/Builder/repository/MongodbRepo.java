@@ -9,10 +9,11 @@ import java.util.List;
 import java.util.Optional;
 @Repository
 public interface MongodbRepo extends MongoRepository<MongodbForm, String> {
-
-   void deleteByTitle(String title);
-
+    void deleteByTitle(String title);
+    @Cacheable(value = "gettitles", key = "#title")
     Optional<MongodbForm> findByTitle(String title);
+
+
 
 
 }
