@@ -4,6 +4,8 @@ import com.example.Form.Builder.config.FormMapStruct;
 import com.example.Form.Builder.dto.request.FormDto;
 import com.example.Form.Builder.dto.response.ResponseDto;
 import com.example.Form.Builder.entities.entity.Form;
+import com.example.Form.Builder.entities.entity.FormComponent;
+import com.example.Form.Builder.repository.SqlRepo;
 import com.example.Form.Builder.service.FormService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,9 +22,21 @@ public class FormController {
     private final FormMapStruct formMapStruct;
     private final FormService formService;
 
-    public FormController(FormMapStruct formMapStruct, FormService formService) {
+    private final SqlRepo sqlRepo;
+
+    public FormController(FormMapStruct formMapStruct, FormService formService,SqlRepo sqlRepo) {
         this.formMapStruct = formMapStruct;
         this.formService = formService;
+        this.sqlRepo=sqlRepo;
+    }
+
+
+    @GetMapping("/components")
+    public ResponseEntity<List<FormComponent>> getcomponent()
+    {
+        List<FormComponent> component = sqlRepo.findComponent();
+
+        return ResponseEntity.ok(component);
     }
 
 
@@ -55,6 +69,8 @@ public class FormController {
 
         return ResponseEntity.ok(formByTitle);
     }
+
+
 
 
 }
