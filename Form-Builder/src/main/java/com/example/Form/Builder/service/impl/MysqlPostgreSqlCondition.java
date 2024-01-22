@@ -13,6 +13,7 @@ public class MysqlPostgreSqlCondition implements Condition
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata)
     {
         String database = context.getEnvironment().getProperty("current.database");
-        return database.equalsIgnoreCase("mysql") || database.equalsIgnoreCase("postgresql");
+        return database.equalsIgnoreCase("mysql") || database.equalsIgnoreCase("postgresql")
+                || database.equalsIgnoreCase("oracle");
     }
 }
