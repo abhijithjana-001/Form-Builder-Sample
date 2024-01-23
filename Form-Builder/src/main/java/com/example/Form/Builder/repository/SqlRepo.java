@@ -22,5 +22,7 @@ public interface SqlRepo extends JpaRepository<Form,Long>  {
     @Query("select component from FormComponent component ")
     List<FormComponent> findComponent();
 
-    List
+    @Query("select component from FormComponent component ")
+    List<FormComponent> findComponents();
+
 }
