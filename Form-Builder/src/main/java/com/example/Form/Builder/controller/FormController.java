@@ -31,21 +31,7 @@ public class FormController {
     }
 
 
-    @GetMapping("/components")
-    public ResponseEntity<List<FormComponent>> getcomponent()
-    {
-        List<FormComponent> component = sqlRepo.findComponent();
 
-        return ResponseEntity.ok(component);
-    }
-
-
-    @PostMapping("/create")
-  public ResponseEntity<ResponseDto<Object>> createForm(@RequestBody FormDto formDto){
-        Form form=formMapStruct.toEntity(formDto);
-        ResponseDto<Object> formResponseDto = formService.saveOrUpdateForm(form,null);
-        return ResponseEntity.ok(formResponseDto);
-    }
     @PutMapping("/update/{title}")
     public  ResponseEntity<ResponseDto<Object>> updateForm(@RequestBody FormDto formDto,@PathVariable String title){
         Form form=formMapStruct.toEntity(formDto);
@@ -71,6 +57,11 @@ public class FormController {
     }
 
 
+    public ResponseEntity<ResponseDto<Object>> createForm(@RequestBody FormDto formDto){
+        Form form=formMapStruct.toEntity(formDto);
+        ResponseDto<Object> formResponseDto = formService.saveOrUpdateForm(form,null);
+        return ResponseEntity.ok(formResponseDto);
+    }
 
 
 }
