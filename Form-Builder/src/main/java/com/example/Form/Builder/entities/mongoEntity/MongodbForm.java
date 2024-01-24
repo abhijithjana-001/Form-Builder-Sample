@@ -12,6 +12,7 @@ import org.springframework.data.redis.core.RedisHash;
 import java.io.Serializable;
 import java.util.List;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

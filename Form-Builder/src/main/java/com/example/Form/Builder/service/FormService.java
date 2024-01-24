@@ -9,5 +9,7 @@ public interface FormService {
     public ResponseDto<Object> saveOrUpdateForm(Form form, String title);
     public ResponseDto<Void> deleteFormByTitle(String title);
     public ResponseDto<Object> getFormByTitle(String title);
+    public ResponseDto<List<Form>> findByTitleStartingWithLetter(String letter);
+    public ResponseDto<Object> getFormsWithEmptyComponents();
 
 }

@@ -4,13 +4,7 @@ import com.example.Form.Builder.config.FormMapStruct;
 import com.example.Form.Builder.dto.request.FormDto;
 import com.example.Form.Builder.dto.response.ResponseDto;
 import com.example.Form.Builder.entities.entity.Form;
-import com.example.Form.Builder.entities.entity.FormComponent;
-import com.example.Form.Builder.repository.SqlRepo;
 import com.example.Form.Builder.service.FormService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,16 +16,25 @@ public class FormController {
     private final FormMapStruct formMapStruct;
     private final FormService formService;
 
-    private final SqlRepo sqlRepo;
 
-    public FormController(FormMapStruct formMapStruct, FormService formService,SqlRepo sqlRepo) {
+
+
+    public FormController(FormMapStruct formMapStruct, FormService formService) {
         this.formMapStruct = formMapStruct;
         this.formService = formService;
-        this.sqlRepo=sqlRepo;
+
     }
 
 
 
+
+
+    @PostMapping("/create")
+  public ResponseEntity<ResponseDto<Object>> createForm(@RequestBody FormDto formDto){
+        Form form=formMapStruct.toEntity(formDto);
+        ResponseDto<Object> formResponseDto = formService.saveOrUpdateForm(form,null);
+        return ResponseEntity.ok(formResponseDto);
+    }
     @PutMapping("/update/{title}")
     public  ResponseEntity<ResponseDto<Object>> updateForm(@RequestBody FormDto formDto,@PathVariable String title){
         Form form=formMapStruct.toEntity(formDto);
@@ -57,11 +60,19 @@ public class FormController {
     }
 
 
-    public ResponseEntity<ResponseDto<Object>> createForm(@RequestBody FormDto formDto){
-        Form form=formMapStruct.toEntity(formDto);
-        ResponseDto<Object> formResponseDto = formService.saveOrUpdateForm(form,null);
-        return ResponseEntity.ok(formResponseDto);
+    @GetMapping("/title/{letter}")
+    public ResponseEntity<ResponseDto<List<Form>>> findFormWithTile (@PathVariable String letter)
+    {
+        ResponseDto<List<Form>> allFormComponents = formService.findByTitleStartingWithLetter(letter);
+        return ResponseEntity.ok(allFormComponents);
     }
 
+    @GetMapping("/empty/components")
+    public ResponseEntity<ResponseDto<Object>> getEmptyComponent()
+    {
+        ResponseDto<Object> emptyComponentsForm = formService.getFormsWithEmptyComponents();
+        return ResponseEntity.ok(emptyComponentsForm);
+
+    }
 
 }
