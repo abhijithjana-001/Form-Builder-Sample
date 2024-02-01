@@ -4,7 +4,7 @@ services:
   formbuilder:
     build: .
     restart: always
-    image: obhijithjana198/formbuilder_sample:try3
+    image: formbuilder_sample:latest
     ports:
       - 8082:8080
     depends_on:
@@ -15,7 +15,7 @@ services:
       - spring.datasource.password=${DB_PASSWORD}
       - current.database=${database}
       - spring.data.mongodb.uri=mongodb://mongodb:27017/form
-      - ORACLE_SID=FREEXDB
+      - ORACLE_SID=FREE
       - ORACLE_PWD=1234
 
 
@@ -48,13 +48,12 @@ services:
     ports:
       - 5435:5432
     environment:
-      POSTGRES_DB: formBuilder
+      POSTGRES_DB: formBuilder1
       POSTGRES_PASSWORD:  ${DB_PASSWORD}
       POSTGRES_USER: ${DB_USERNAME}
     networks:
       - springboot
-
-
+    
   mongodb:
     image: mongo:latest
     ports:
@@ -71,15 +70,13 @@ services:
       - springboot
 
 
+
   redis:
     image: redis:latest
     ports:
       - 6381:6379
     networks:
      - springboot
-
-
-
 
 
 networks:
