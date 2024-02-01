@@ -18,6 +18,7 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.MongoDBContainer;
 import org.testcontainers.utility.DockerImageName;
 
@@ -43,13 +44,13 @@ public class MongoFormServiceTest {
 
     private MongodbForm form;
     private Form updatedForm;
-
+//
 //    static {
 //        GenericContainer<?> noSqlContainer =
-//                new GenericContainer<>(DockerImageName.parse("redis:5.0.3-alpine")).withExposedPorts(6379);
-//        redis.start();
-//        System.setProperty("spring.redis.host", redis.getHost());
-//        System.setProperty("spring.redis.port", redis.getMappedPort(6379).toString());
+//                new GenericContainer<>(DockerImageName.parse("redis:latest")).withExposedPorts(6379);
+//        noSqlContainer.start();
+//        System.setProperty("spring.redis.host", noSqlContainer.getHost());
+//        System.setProperty("spring.redis.port", noSqlContainer.getMappedPort(6379).toString());
 //    }
 
     @DynamicPropertySource
