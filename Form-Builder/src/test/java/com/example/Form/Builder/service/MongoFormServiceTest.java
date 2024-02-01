@@ -31,7 +31,6 @@ import static org.mockito.Mockito.timeout;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(SpringExtension.class)
-@TestPropertySource(properties = "current.database=mongodb")
 @SpringBootTest
 public class MongoFormServiceTest {
     @SpyBean
@@ -56,7 +55,7 @@ public class MongoFormServiceTest {
     @DynamicPropertySource
     public static void configureProperty(DynamicPropertyRegistry registry) {
         registry.add("spring.data.mongodb.uri", noSqlContainer::getReplicaSetUrl);
-        registry.add("current.database",()->"redis");
+        registry.add("current.database",()->"mongodb");
     }
     @BeforeAll
     static void beforeAll() {
